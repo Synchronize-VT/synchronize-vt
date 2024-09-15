@@ -17,7 +17,7 @@ export default function ChatBot() {
     setMessages([...messages, { role: 'user', content: input }]);
 
     try {
-      const response = await axios.post('http://127.0.0.1:5001/chat', { message: input });
+      const response = await axios.post('http://127.0.0.1:4000/chat', { message: input });
       const assistantMessage = response.data.response;
       setMessages(prevMessages => [...prevMessages, { role: 'assistant', content: assistantMessage }]);
     } catch (error) {
